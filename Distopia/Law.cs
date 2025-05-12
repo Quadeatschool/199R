@@ -1,16 +1,10 @@
 public class Law
 {
-theIk
-
-Competent
-
-Organized	
-
-Dutiful	
-
-Achievement
-
-disciplined
-
-Impulsive
+public int theIk;
+public int Competent;
+public int Organized;
+public int Dutiful;	
+public int Achievement;
+public int disciplined;
+public int Impulsive;
 }
