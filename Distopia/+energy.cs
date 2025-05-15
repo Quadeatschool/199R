@@ -8,6 +8,7 @@ public int Energized_by_social_interaction;
 public int comfortable_with_attention;
 public int Excitement_seeking;
 
+public int CalcEnergyScore(int )
 
 }
 

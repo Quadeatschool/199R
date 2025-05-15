@@ -6,10 +6,13 @@ public class curse
     public int Self_conscious;
     public int Vulnerable;
     public int moody;
+    
+
+    
 
     public void CurseEnergy()
     {
-        
+
     }
 }
 
