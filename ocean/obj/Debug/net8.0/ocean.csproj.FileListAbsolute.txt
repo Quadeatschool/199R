@@ -1,0 +1,15 @@
+C:\Users\knigh\Documents\199R\ocean\obj\Debug\net8.0\ocean.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\knigh\Documents\199R\ocean\obj\Debug\net8.0\ocean.AssemblyInfoInputs.cache
+C:\Users\knigh\Documents\199R\ocean\obj\Debug\net8.0\ocean.AssemblyInfo.cs
+C:\Users\knigh\Documents\199R\ocean\obj\Debug\net8.0\ocean.csproj.CoreCompileInputs.cache
+C:\Users\knigh\Documents\199R\ocean\obj\Debug\net8.0\ocean.sourcelink.json
+C:\Users\knigh\Documents\199R\ocean\bin\Debug\net8.0\ocean.exe
+C:\Users\knigh\Documents\199R\ocean\bin\Debug\net8.0\ocean.deps.json
+C:\Users\knigh\Documents\199R\ocean\bin\Debug\net8.0\ocean.runtimeconfig.json
+C:\Users\knigh\Documents\199R\ocean\bin\Debug\net8.0\ocean.dll
+C:\Users\knigh\Documents\199R\ocean\bin\Debug\net8.0\ocean.pdb
+C:\Users\knigh\Documents\199R\ocean\obj\Debug\net8.0\ocean.dll
+C:\Users\knigh\Documents\199R\ocean\obj\Debug\net8.0\refint\ocean.dll
+C:\Users\knigh\Documents\199R\ocean\obj\Debug\net8.0\ocean.pdb
+C:\Users\knigh\Documents\199R\ocean\obj\Debug\net8.0\ocean.genruntimeconfig.cache
+C:\Users\knigh\Documents\199R\ocean\obj\Debug\net8.0\ref\ocean.dll
