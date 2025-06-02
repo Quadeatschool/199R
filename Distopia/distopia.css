@@ -1,5 +1,33 @@
+
+
+:root {
+  --primary-color: #090302; /* smoky */
+  --secondary-color: #F3A712; /* gold */
+  --success-color: #8A4FFF;  /* purple fire */
+  --warning-color: #ffc107;  /* Yellow */
+  --danger-color: #dc3545;   /* Red */
+  --light-gray: #f8f9fa;
+  --dark-gray: #343a40;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+
 button {
     height: 100px;
     border: solid;
+    color: var(--secondary-color);
     background: black;
+
+}
+
+
+#menuGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+#button-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }
