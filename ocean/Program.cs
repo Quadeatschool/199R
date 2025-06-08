@@ -15,6 +15,8 @@ class Program
             Empathy = 9,
             Critical = 2,
             Demanding = 1
+
+            
         };
 
         float score = karma.GetKarmaScore();
