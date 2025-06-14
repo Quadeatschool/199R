@@ -28,3 +28,4 @@ if (showButton) {
 
 // You could also call hideMenu() directly if you want it hidden on page load
 // hideMenu();
+

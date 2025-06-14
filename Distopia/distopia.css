@@ -12,6 +12,13 @@
   --black: #000000;
 }
 
+.menu, a {
+    text-decoration: none; /* Remove underline */
+    color: var(--danger-color); /* Set text color */
+    font-size: 16px; /* Adjust font size */
+    padding: 10px 15px; /* Add spacing */
+    display: block; /* Ensures full clickable area */
+}
 
 button {
     height: 100px;
@@ -21,7 +28,11 @@ button {
 
 }
 
+h2 {
+    text-align: center;
+    color: var(--danger-color);
 
+}
 #menuGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -30,4 +41,55 @@ button {
 #button-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+}
+/* inserted */
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 15px; /* Space between items */
+    background-color: #333;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+    gap: 10px;
+
+
+}
+
+.menu li {
+    display: inline-block;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: background 0.3s;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+/* insert */
+
+
+footer{
+    position: fixed;
+    width: 100%;
+    bottom: 0%;
+    background-color: var(--success-color);
+    text-align: center;
+    left: 0%;
+    color: var(--light-gray);
+    height: 50px;
+}
+
+
+@media (min-width: 700px)  {
+
+
+
+    
 }
