@@ -3,13 +3,17 @@
 :root {
   --primary-color: #090302; /* smoky */
   --secondary-color: #F3A712; /* gold */
-  --success-color: #8A4FFF;  /* purple fire */
+  --success-color: #35771d;  /* purple fire */
   --warning-color: #ffc107;  /* Yellow */
   --danger-color: #dc3545;   /* Red */
   --light-gray: #f8f9fa;
   --dark-gray: #343a40;
   --white: #ffffff;
   --black: #000000;
+}
+
+main {
+    background-image: url("Distopia\images\openart-image_udC1J50q_1750782868318_raw.jpg");
 }
 
 .menu, a {
@@ -36,6 +40,8 @@ h2 {
 #menuGrid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    list-style-type: none;
 }
 
 #button-grid {
