@@ -3,54 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entry page</title>
-    <meta name="Author" content="Quade Hafen">
-    <meta name="Welcome page" content="Login and gives access to the journal">
-    <script src="distopia.js" defer></script>
-    <link rel="stylesheet" href="Distopia/distopia.css">
+    <title>Personality RPG</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
-<body>
-    <header>
-        <h2>The End</h2>
-        <nav id="menu" class="hidden">
-            <ul id="menuGrid">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Reaources</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+<body class="min-h-screen bg-gray-50">
+    <div class="max-w-4xl mx-auto p-4">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Personality RPG</h1>
+            <p class="text-gray-600">Discover yourself through experiential challenges</p>
+        </header>
+
+        <nav class="flex gap-2 mb-6">
+            <button id="nav-dashboard" class="nav-btn active flex items-center gap-2 px-4 py-2 rounded-lg transition-colors">
+                <i data-lucide="user" class="w-4 h-4"></i>
+                Dashboard
+            </button>
+            <button id="nav-challenges" class="nav-btn flex items-center gap-2 px-4 py-2 rounded-lg transition-colors">
+                <i data-lucide="target" class="w-4 h-4"></i>
+                Challenges
+            </button>
+            <button id="nav-journal" class="nav-btn flex items-center gap-2 px-4 py-2 rounded-lg transition-colors">
+                <i data-lucide="book-open" class="w-4 h-4"></i>
+                Journal
+            </button>
         </nav>
-    </header>
-   
-    <main>
-        <div id="button-grid">
-        <section class="Begin">
-            <button>Click for a karma challenge</button>
-        </section>
 
-         <section class="Begin">
-            <button>Click for a challenge</button>
-        </section>
+        <main>
+            <!-- Dashboard View -->
+            <div id="dashboard-view" class="view active">
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-600 text-white p-6 rounded-lg">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
+                                <i data-lucide="user" class="w-8 h-8"></i>
+                            </div>
+                            <div>
+                                <h2 class="text-2xl font-bold">Level <span id="user-level">1</span> Explorer</h2>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <div class="w-32 h-2 bg-white bg-opacity-20 rounded-full">
+                                        <div id="xp-progress" class="h-full bg-white rounded-full transition-all duration-300" style="width: 0%"></div>
+                                    </div>
+                                    <span class="text-sm"><span id="current-xp">0</span>/100 XP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-        <section class="Begin">
-            <button>Click for a challenge</button>
-        </section>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4" id="stats-grid">
+                        <!-- Stats will be populated by JavaScript -->
+                    </div>
 
-        <section class="Begin">
-            <button>Click for a challenge</button>
-        </section>
+                    <div class="bg-white p-4 rounded-lg border">
+                        <h3 class="font-semibold text-gray-800 mb-2">Recent Achievements</h3>
+                        <div id="achievements-list">
+                            <p class="text-gray-500 text-sm">Complete your first challenge to unlock achievements!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <section class="Begin">
-            <button>Click for a challenge</button>
-        </section>
+            <!-- Challenges View -->
+            <div id="challenges-view" class="view hidden">
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold text-gray-800">Personality Challenges</h2>
+                    <p class="text-gray-600">Complete these real-world experiments to discover more about yourself!</p>
+                    <div class="grid gap-4" id="challenges-grid">
+                        <!-- Challenges will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
 
-        <section class="Begin">
-            <button>Click for a challenge</button>
-        </section>
-        </div>
-        <footer><a>Quade hafen 2025</a></footer>
-    </main>
-   
+            <!-- Journal View -->
+            <div id="journal-view" class="view hidden">
+                <div class="space-y-4">
+                    <h2 class="text-2xl font-bold text-gray-800">Reflection Journal</h2>
+                    <p class="text-gray-600">Your personal insights and discoveries</p>
+                    <div id="journal-entries">
+                        <div class="text-center py-8">
+                            <i data-lucide="book-open" class="w-12 h-12 text-gray-400 mx-auto mb-4"></i>
+                            <p class="text-gray-500">Complete challenges to start building your reflection journal!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>

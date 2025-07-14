@@ -1,0 +1,160 @@
+/* Custom styles for Personality RPG */
+
+.view {
+    display: block;
+}
+
+.view.hidden {
+    display: none;
+}
+
+.nav-btn {
+    background-color: white;
+    color: #374151;
+}
+
+.nav-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.nav-btn.active {
+    background-color: #3b82f6;
+    color: white;
+}
+
+.challenge-card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.challenge-card:hover {
+    border-color: #d1d5db;
+}
+
+.challenge-card.completed {
+    border-color: #34d399;
+    background-color: #f0fdf4;
+}
+
+.challenge-card .icon-container {
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.challenge-card .trait-badge {
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: white;
+}
+
+.challenge-card .reflection-section {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: #f9fafb;
+    border-radius: 0.5rem;
+}
+
+.challenge-card textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    resize: none;
+    height: 5rem;
+}
+
+.challenge-card .complete-btn {
+    margin-top: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #10b981;
+    color: white;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.challenge-card .complete-btn:hover {
+    background-color: #059669;
+}
+
+.challenge-card .complete-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.stats-card {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.stats-card .stat-value {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 auto 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.journal-entry {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.journal-entry .entry-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.journal-entry .entry-date {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Animation for view transitions */
+.view {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .flex {
+        flex-direction: column;
+    }
+    
+    .gap-2 {
+        gap: 0.5rem;
+    }
+} 
