@@ -11,11 +11,27 @@ const scaleLabels = [
   'Strongly Agree',
 ];
 
+const traitLabels: Record<string, string> = {
+  openness: 'Openness',
+  conscientiousness: 'Conscientiousness',
+  extraversion: 'Extraversion',
+  agreeableness: 'Agreeableness',
+  neuroticism: 'Neuroticism',
+};
+const feedback: Record<string, string> = {
+  openness: 'Curious, creative, open to new experiences.',
+  conscientiousness: 'Organized, reliable, self-disciplined.',
+  extraversion: 'Outgoing, energetic, enjoys socializing.',
+  agreeableness: 'Compassionate, cooperative, trusting.',
+  neuroticism: 'Sensitive, prone to stress, emotionally aware.',
+};
+
 export default function Quiz() {
   const [current, setCurrent] = useState(0);
   const [answers, setAnswers] = useState<number[]>(Array(quizQuestions.length).fill(3));
   const [finished, setFinished] = useState(false);
   const setTrait = useUserStore((s) => s.setTrait);
+  const traits = useUserStore((s) => s.traits);
 
   const handleAnswer = (value: number) => {
     const updated = [...answers];
@@ -42,21 +58,6 @@ export default function Quiz() {
   };
 
   if (finished) {
-    const traits = useUserStore((s) => s.traits);
-    const traitLabels: Record<string, string> = {
-      openness: 'Openness',
-      conscientiousness: 'Conscientiousness',
-      extraversion: 'Extraversion',
-      agreeableness: 'Agreeableness',
-      neuroticism: 'Neuroticism',
-    };
-    const feedback: Record<string, string> = {
-      openness: 'Curious, creative, open to new experiences.',
-      conscientiousness: 'Organized, reliable, self-disciplined.',
-      extraversion: 'Outgoing, energetic, enjoys socializing.',
-      agreeableness: 'Compassionate, cooperative, trusting.',
-      neuroticism: 'Sensitive, prone to stress, emotionally aware.',
-    };
     return (
       <div className="max-w-xl mx-auto p-8 text-center">
         <h2 className="text-3xl font-bold mb-4">Quiz Complete!</h2>
