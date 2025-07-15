@@ -1,136 +1,117 @@
 /* Custom styles for Personality RPG */
 
+/* 1. Animated gradient background */
+body {
+    background: linear-gradient(270deg, #f8fafc, #e0e7ff, #f472b6, #a5b4fc, #f8fafc);
+    background-size: 200% 200%;
+    animation: gradientMove 12s ease-in-out infinite;
+    font-family: 'Quicksand', sans-serif;
+}
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 2. Custom scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    background: #e0e7ff;
+}
+::-webkit-scrollbar-thumb {
+    background: #a5b4fc;
+    border-radius: 4px;
+}
+
+/* 3. RPG-inspired card borders */
+.challenge-card, .stats-card, .journal-entry {
+    border: 2px solid #a5b4fc;
+    border-image: linear-gradient(45deg, #a5b4fc, #f472b6) 1;
+}
+
+/* 4. Section headings with decorative icons */
+h2 {
+    position: relative;
+    padding-left: 2rem;
+    font-weight: 700;
+}
+h2::before {
+    content: '🗡️';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+/* 5. XP bar animation & tooltip */
+#xp-progress {
+    transition: width 0.6s cubic-bezier(.4,2,.6,1);
+    position: relative;
+}
+#xp-progress:hover::after {
+    content: 'XP to next level!';
+    position: absolute;
+    left: 50%;
+    top: -2rem;
+    transform: translateX(-50%);
+    background: #fffbe6;
+    color: #a16207;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    white-space: nowrap;
+    z-index: 10;
+}
+
+/* 6. Button press/glow effect */
+.nav-btn:active, .start-challenge-btn:active, .complete-btn:active {
+    box-shadow: 0 0 0 2px #FFD700;
+}
+.nav-btn:focus, .start-challenge-btn:focus, .complete-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #a5b4fc;
+}
+
+/* 7. Glow on level up */
+.level-up {
+    animation: glow 1s ease-in-out;
+}
+@keyframes glow {
+    0% { text-shadow: 0 0 0 #FFD700; }
+    50% { text-shadow: 0 0 16px #FFD700; }
+    100% { text-shadow: 0 0 0 #FFD700; }
+}
+
+/* 8. Badge for completed challenges */
+.challenge-card.completed::after {
+    content: '★';
+    color: #FFD700;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    filter: drop-shadow(0 0 4px #FFD700);
+}
+
+/* 9. Fade/slide transitions for views */
 .view {
-    display: block;
-}
-
-.view.hidden {
-    display: none;
-}
-
-.nav-btn {
-    background-color: white;
-    color: #374151;
-}
-
-.nav-btn:hover {
-    background-color: #f3f4f6;
-}
-
-.nav-btn.active {
-    background-color: #3b82f6;
-    color: white;
-}
-
-.challenge-card {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 2px solid #e5e7eb;
-    transition: all 0.3s ease;
-}
-
-.challenge-card:hover {
-    border-color: #d1d5db;
-}
-
-.challenge-card.completed {
-    border-color: #34d399;
-    background-color: #f0fdf4;
-}
-
-.challenge-card .icon-container {
-    padding: 0.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.challenge-card .trait-badge {
-    padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: white;
-}
-
-.challenge-card .reflection-section {
-    margin-top: 1rem;
-    padding: 0.75rem;
-    background-color: #f9fafb;
-    border-radius: 0.5rem;
-}
-
-.challenge-card textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
-    resize: none;
-    height: 5rem;
-}
-
-.challenge-card .complete-btn {
-    margin-top: 0.5rem;
-    padding: 0.5rem 1rem;
-    background-color: #10b981;
-    color: white;
-    border-radius: 0.5rem;
-    transition: background-color 0.3s ease;
-}
-
-.challenge-card .complete-btn:hover {
-    background-color: #059669;
-}
-
-.challenge-card .complete-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.stats-card {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #e5e7eb;
-    text-align: center;
-}
-
-.stats-card .stat-value {
-    width: 3rem;
-    height: 3rem;
-    margin: 0 auto 0.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: bold;
-    font-size: 1.125rem;
-}
-
-.journal-entry {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #e5e7eb;
-}
-
-.journal-entry .entry-header {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.journal-entry .entry-date {
-    font-size: 0.875rem;
-    color: #6b7280;
-}
-
-/* Animation for view transitions */
-.view {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s, transform 0.3s;
     animation: fadeIn 0.3s ease-in-out;
+}
+.view.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    position: absolute;
+}
+.view.active {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
 }
 
 @keyframes fadeIn {
@@ -144,22 +125,50 @@
     }
 }
 
-/* Responsive design adjustments */
+/* 10. Trait icons in stats grid */
+.stats-card .trait-icon {
+    display: block;
+    margin: 0 auto 0.25rem auto;
+}
+
+/* 11. Responsive design adjustments */
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
     .flex {
         flex-direction: column;
     }
-    
     .gap-2 {
         gap: 0.5rem;
     }
-} 
+}
 
-/* Add or override for golden yellow extraversion */
+/* 12. Golden yellow for extraversion */
 .bg-gold-400 {
     background-color: #FFD700 !important;
+}
+
+/* 13. Dark mode support */
+body.dark-mode {
+    background: linear-gradient(135deg, #232946 0%, #121629 100%);
+    color: #f4f4f4;
+}
+body.dark-mode .challenge-card,
+body.dark-mode .stats-card,
+body.dark-mode .journal-entry {
+    background: #232946;
+    color: #f4f4f4;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+body.dark-mode .nav-btn {
+    background: #232946;
+    color: #f4f4f4;
+}
+body.dark-mode .nav-btn.active {
+    background: #FFD700;
+    color: #232946;
+}
+body.dark-mode .challenge-card.completed::after {
+    filter: drop-shadow(0 0 8px #FFD700);
 } 

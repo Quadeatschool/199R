@@ -193,6 +193,15 @@ const traitNames = {
     neuroticism: "-Energy"
 };
 
+// Add trait icons for stats grid
+const traitIcons = {
+    openness: "sparkles",
+    conscientiousness: "target",
+    extraversion: "zap",
+    agreeableness: "handshake",
+    neuroticism: "brain"
+};
+
 // Load data from localStorage
 function loadData() {
     const savedStats = localStorage.getItem('personalityRPG_stats');
@@ -241,10 +250,33 @@ function showView(viewName) {
     }
 }
 
+// Add dark mode toggle
+function addDarkModeToggle() {
+    const nav = document.querySelector('nav');
+    const btn = document.createElement('button');
+    btn.id = 'dark-mode-toggle';
+    btn.className = 'nav-btn flex items-center gap-2 px-4 py-2 rounded-lg transition-colors';
+    btn.innerHTML = '<i data-lucide="moon" class="w-4 h-4"></i>Dark Mode';
+    nav.appendChild(btn);
+    btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        btn.innerHTML = document.body.classList.contains('dark-mode')
+            ? '<i data-lucide="sun" class="w-4 h-4"></i>Light Mode'
+            : '<i data-lucide="moon" class="w-4 h-4"></i>Dark Mode';
+        lucide.createIcons();
+    });
+}
+
 // Update dashboard
 function updateDashboard() {
     // Update level and XP
-    document.getElementById('user-level').textContent = userStats.level;
+    const levelElem = document.getElementById('user-level');
+    const prevLevel = parseInt(levelElem.textContent);
+    levelElem.textContent = userStats.level;
+    if (userStats.level > prevLevel) {
+        levelElem.classList.add('level-up');
+        setTimeout(() => levelElem.classList.remove('level-up'), 1200);
+    }
     document.getElementById('current-xp').textContent = userStats.xp % 100;
     document.getElementById('xp-progress').style.width = `${(userStats.xp % 100)}%`;
     
@@ -256,6 +288,7 @@ function updateDashboard() {
         const statCard = document.createElement('div');
         statCard.className = 'stats-card';
         statCard.innerHTML = `
+            <i data-lucide="${traitIcons[trait]}" class="trait-icon w-6 h-6 mb-1"></i>
             <div class="stat-value ${traitColors[trait]}">${userStats[trait]}</div>
             <p class="text-sm font-medium text-gray-700">${name}</p>
         `;
@@ -423,6 +456,7 @@ function completeChallenge(challengeId, reflection) {
 // Initialize app
 function initApp() {
     loadData();
+    addDarkModeToggle();
     
     // Set up navigation event listeners
     document.getElementById('nav-dashboard').addEventListener('click', () => showView('dashboard'));
