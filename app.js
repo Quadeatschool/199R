@@ -20,6 +20,7 @@ let journalEntries = [];
 
 // Challenge Data
 const challenges = [
+    // Existing challenges
     {
         id: 1,
         title: "The Tomato Experiment",
@@ -82,13 +83,104 @@ const challenges = [
         xp: 15,
         icon: "brain",
         completed: false
+    },
+    // New challenges
+    {
+        id: 8,
+        title: "Silent Walk",
+        description: "Take a 20-minute walk without headphones or distractions. Just observe your surroundings.",
+        trait: "openness",
+        xp: 15,
+        icon: "footprints",
+        completed: false
+    },
+    {
+        id: 9,
+        title: "Learn Something Weird",
+        description: "Watch a documentary or YouTube video on a topic you know nothing about.",
+        trait: "openness",
+        xp: 20,
+        icon: "book-open",
+        completed: false
+    },
+    {
+        id: 10,
+        title: "Inbox Zero",
+        description: "Clean out your email inbox to zero.",
+        trait: "conscientiousness",
+        xp: 15,
+        icon: "inbox",
+        completed: false
+    },
+    {
+        id: 11,
+        title: "Daily Goal Streak",
+        description: "Set one micro-goal each morning and complete it for 3 days in a row.",
+        trait: "conscientiousness",
+        xp: 25,
+        icon: "target",
+        completed: false
+    },
+    {
+        id: 12,
+        title: "Compliment a Stranger",
+        description: "Give a sincere compliment to someone you don’t know.",
+        trait: "extraversion",
+        xp: 15,
+        icon: "smile",
+        completed: false
+    },
+    {
+        id: 13,
+        title: "Attend a Social Event",
+        description: "Join a public class, workshop, or meetup you wouldn’t normally attend.",
+        trait: "extraversion",
+        xp: 25,
+        icon: "users",
+        completed: false
+    },
+    {
+        id: 14,
+        title: "Help Without Being Asked",
+        description: "Offer help to a friend, family member, or coworker before they ask.",
+        trait: "agreeableness",
+        xp: 20,
+        icon: "handshake",
+        completed: false
+    },
+    {
+        id: 15,
+        title: "Gratitude Message",
+        description: "Send an unexpected thank-you text to someone from your past.",
+        trait: "agreeableness",
+        xp: 15,
+        icon: "message-circle",
+        completed: false
+    },
+    {
+        id: 16,
+        title: "Cold Shower Challenge",
+        description: "Take a 30-second cold shower and journal how it felt after.",
+        trait: "neuroticism",
+        xp: 20,
+        icon: "snowflake",
+        completed: false
+    },
+    {
+        id: 17,
+        title: "Unplug Hour",
+        description: "Turn off your phone for one hour and spend that time entirely offline.",
+        trait: "neuroticism",
+        xp: 20,
+        icon: "power",
+        completed: false
     }
 ];
 
 const traitColors = {
     openness: "bg-purple-500",
     conscientiousness: "bg-blue-500",
-    extraversion: "bg-orange-500",
+    extraversion: "bg-gold-400",
     agreeableness: "bg-green-500",
     neuroticism: "bg-red-500"
 };

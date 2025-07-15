@@ -1,5 +1,7 @@
 # Personality RPG
 
+Prototype for a personality development game. https://quadeatschool.github.io/199R/Index.html
+
 A web-based personality development game that helps you discover yourself through experiential challenges. Converted from React TypeScript to vanilla HTML, CSS, and JavaScript.
 
 ## Features
